@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+*.part
+*-files/
+*.pptx
+!examples/showcase.pptx
+preview-grid.png
+layout-gallery.json
+chart-gallery.json

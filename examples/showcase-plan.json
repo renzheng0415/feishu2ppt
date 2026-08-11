@@ -1,0 +1,74 @@
+{
+  "theme": "data_journalism",
+  "title": "深圳项目月度营销复盘",
+  "subtitle": "从内容流量到到访成交的完整判断",
+  "company": "示例团队",
+  "author": "",
+  "date": "",
+  "slides": [
+    {
+      "type": "section_header",
+      "title": "01 本月核心判断",
+      "subtitle": "",
+      "number": "01"
+    },
+    {
+      "type": "content",
+      "section": "01 本月核心判断",
+      "title": "成交增长来自有效到访提升",
+      "items": [
+        "本月到访量连续三周增长，客户结构同步改善。",
+        "直播贡献了新增客资，但到访转化仍需要重点复盘。",
+        "下一阶段应把留资到到访的流失环节拆开管理。"
+      ]
+    },
+    {
+      "type": "section_header",
+      "title": "02 数据表现",
+      "subtitle": "",
+      "number": "02"
+    },
+    {
+      "type": "chart_focus",
+      "title": "4 月以后到访与认购同步加速",
+      "chart_style": "line_trend",
+      "categories": [
+        "1月",
+        "2月",
+        "3月",
+        "4月",
+        "5月",
+        "6月"
+      ],
+      "series": [
+        {
+          "name": "到访",
+          "values": [
+            62.0,
+            75.0,
+            73.0,
+            96.0,
+            121.0,
+            148.0
+          ]
+        },
+        {
+          "name": "认购",
+          "values": [
+            18.0,
+            22.0,
+            20.0,
+            31.0,
+            44.0,
+            52.0
+          ]
+        }
+      ],
+      "insight": "4 月以后，到访与认购同步加速。",
+      "source": "示例销售日报。",
+      "section": "02 数据表现"
+    }
+  ],
+  "_warnings": [],
+  "_errors": []
+}

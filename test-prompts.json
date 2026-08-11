@@ -1,0 +1,62 @@
+[
+  {
+    "name": "standard_feishu_deck",
+    "prompt": "Use $feishu2ppt to turn examples/sample-feishu.xml into an editable data-journalism presentation.",
+    "expect": ["plan gate passes", "agent shows plan before rendering", "editable line chart", "issues=0", "visual review required"]
+  },
+  {
+    "name": "missing_h2_rejected",
+    "prompt": "Convert a Feishu document containing only H1 and body paragraphs.",
+    "expect": ["plan gate fails", "no PPTX rendered", "missing H2 error"]
+  },
+  {
+    "name": "unsafe_table_content_preserved",
+    "prompt": "Keep a Feishu table containing commas, semicolons and quotes as an editable table.",
+    "expect": ["cell text round-trips exactly", "issues=0"]
+  },
+  {
+    "name": "unsafe_chart_label_rejected",
+    "prompt": "Render a chart whose category contains commas or semicolons.",
+    "expect": ["plan gate fails", "no silent label split", "actionable delimiter error"]
+  },
+  {
+    "name": "missing_media_rejected",
+    "prompt": "Build a deck from a document whose image token did not produce a local file.",
+    "expect": ["plan gate fails", "missing media identifier is reported", "no silent omission"]
+  },
+  {
+    "name": "invalid_chart_values_rejected",
+    "prompt": "Render a chart containing strings, booleans, NaN or Infinity as values.",
+    "expect": ["plan gate fails", "non-finite value error", "no PPTX rendered"]
+  },
+  {
+    "name": "post_render_failure_preserves_final",
+    "prompt": "Replace an existing PPTX when the newly rendered candidate fails a quality check.",
+    "expect": ["existing PPTX remains unchanged", "candidate is removed", "no false success"]
+  },
+  {
+    "name": "changed_media_token_refreshes_cache",
+    "prompt": "Regenerate in the same workdir after a Feishu image token changes.",
+    "expect": ["new cache path", "new media bytes", "old cache is not reused"]
+  },
+  {
+    "name": "long_table_paginates",
+    "prompt": "Convert a 30-row Feishu table into editable slides.",
+    "expect": ["three table slides", "repeated headers", "last row remains visible"]
+  },
+  {
+    "name": "malformed_layout_schema_rejected",
+    "prompt": "Render cards, timelines or dashboards whose item entries are strings instead of objects.",
+    "expect": ["plan gate fails", "actionable schema error", "renderer is not invoked"]
+  },
+  {
+    "name": "one_shot_flow_unavailable",
+    "prompt": "Generate and approve a fresh plan in one command.",
+    "expect": ["all command unavailable", "plan and render remain separate", "user review cannot be bypassed"]
+  },
+  {
+    "name": "private_media_url_rejected",
+    "prompt": "Download a document image from localhost, a private IP or a link-local metadata endpoint.",
+    "expect": ["download is rejected", "no internal request is sent", "actionable security error"]
+  }
+]

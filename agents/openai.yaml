@@ -1,0 +1,4 @@
+interface:
+  display_name: "Feishu2PPT"
+  short_description: "读取飞书文档并生成带图片、视频和图表的可编辑高级 PPT"
+  default_prompt: "使用 $feishu2ppt 读取这份飞书文档，先生成并展示页面计划，等我确认后再生成可编辑的 PPT。"
