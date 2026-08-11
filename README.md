@@ -25,6 +25,12 @@ Current release: `1.0.0`. Explicit CLI theme choices override document defaults;
 
 ## Install
 
+From GitHub:
+
+```bash
+npx skills add renzheng0415/feishu2ppt -g --all
+```
+
 From an extracted folder:
 
 ```bash
